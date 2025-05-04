@@ -1,6 +1,9 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "./components/MusicPlayer.css";
 
 @layer base {
   :root {
@@ -98,4 +101,15 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom styles for the music player */
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+
+input[type="range"]:focus {
+  outline: none;
 }
