@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Heart, Search, User, MapPin, Phone, MessageCircle, Flag, AlertTriangle, CheckCircle } from "lucide-react";
+import { Heart, Search, User, MapPin, Phone, MessageCircle, Flag, AlertTriangle, CheckCircle, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import PropertyGallery from "./PropertyGallery";
@@ -13,78 +12,125 @@ import SimilarProperties from "./SimilarProperties";
 
 const PropertyDetailPage = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className={`min-h-screen transition-all duration-500 ${
-      isDarkMode 
-        ? 'bg-gradient-to-br from-[#362c5d] via-[#4a3268] to-[#ff1c67]' 
-        : 'bg-gradient-to-br from-purple-100 via-pink-50 to-rose-100'
-    }`}>
+    <div className={`min-h-screen transition-all duration-500 bg-background text-foreground`}>
       {/* Header */}
       <header className={`${
         isDarkMode 
           ? 'bg-black/20 backdrop-blur-md border-white/10' 
           : 'bg-white/30 backdrop-blur-md border-purple-200/30'
       } border-b sticky top-0 z-50`}>
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          {/* Brand */}
-          <div className="flex items-center space-x-4">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent">
-              RentoMate
-            </h1>
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            {/* Brand */}
+            <div className="flex items-center space-x-4">
+              <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent">
+                RentoMate
+              </h1>
+            </div>
+
+            {/* Search Bar - Hidden on Mobile */}
+            <div className="hidden md:block flex-1 max-w-md mx-8">
+              <div className={`relative ${
+                isDarkMode 
+                  ? 'bg-white/10 backdrop-blur-md border-white/20' 
+                  : 'bg-white/40 backdrop-blur-md border-purple-200/40'
+              } rounded-full border`}>
+                <Search className={`absolute left-4 top-1/2 transform -translate-y-1/2 ${
+                  isDarkMode ? 'text-white/70' : 'text-purple-600/70'
+                } w-5 h-5`} />
+                <input
+                  type="text"
+                  placeholder="Search destinations..."
+                  className={`w-full pl-12 pr-4 py-3 bg-transparent ${
+                    isDarkMode ? 'text-white placeholder-white/70' 
+                               : 'text-purple-900 placeholder-purple-600/70'
+                  } rounded-full focus:outline-none focus:ring-2 focus:ring-pink-400/50`}
+                />
+              </div>
+            </div>
+
+            {/* Right Section */}
+            <div className="flex items-center space-x-2 md:space-x-4">
+              <div className="hidden md:flex items-center space-x-2">
+                <span className={`text-sm ${isDarkMode ? 'text-white/70' : 'text-purple-700'}`}>
+                  {isDarkMode ? 'Dark' : 'Light'}
+                </span>
+                <Switch
+                  checked={!isDarkMode}
+                  onCheckedChange={(checked) => setIsDarkMode(!checked)}
+                  className="data-[state=checked]:bg-pink-500"
+                />
+              </div>
+              <Button className={`hidden md:flex ${
+                isDarkMode 
+                  ? 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700' 
+                  : 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600'
+              } text-white rounded-full px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300`}>
+                Host your property
+              </Button>
+              <div className={`${
+                isDarkMode ? 'bg-white/10 backdrop-blur-md' : 'bg-white/40 backdrop-blur-md'
+              } p-2 rounded-full`}>
+                <User className={`w-6 h-6 ${isDarkMode ? 'text-white' : 'text-purple-700'}`} />
+              </div>
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden p-2"
+              >
+                <Menu className={`w-6 h-6 ${isDarkMode ? 'text-white' : 'text-purple-700'}`} />
+              </button>
+            </div>
           </div>
 
-          {/* Search Bar */}
-          <div className="flex-1 max-w-md mx-8">
-            <div className={`relative ${
-              isDarkMode 
-                ? 'bg-white/10 backdrop-blur-md border-white/20' 
-                : 'bg-white/40 backdrop-blur-md border-purple-200/40'
-            } rounded-full border`}>
-              <Search className={`absolute left-4 top-1/2 transform -translate-y-1/2 ${
-                isDarkMode ? 'text-white/70' : 'text-purple-600/70'
-              } w-5 h-5`} />
-              <input
-                type="text"
-                placeholder="Search destinations..."
-                className={`w-full pl-12 pr-4 py-3 bg-transparent ${
-                  isDarkMode ? 'text-white placeholder-white/70' 
-                             : 'text-purple-900 placeholder-purple-600/70'
-                } rounded-full focus:outline-none focus:ring-2 focus:ring-pink-400/50`}
-              />
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 space-y-4">
+              <div className={`relative ${
+                isDarkMode 
+                  ? 'bg-white/10 backdrop-blur-md border-white/20' 
+                  : 'bg-white/40 backdrop-blur-md border-purple-200/40'
+              } rounded-full border`}>
+                <Search className={`absolute left-4 top-1/2 transform -translate-y-1/2 ${
+                  isDarkMode ? 'text-white/70' : 'text-purple-600/70'
+                } w-5 h-5`} />
+                <input
+                  type="text"
+                  placeholder="Search destinations..."
+                  className={`w-full pl-12 pr-4 py-3 bg-transparent ${
+                    isDarkMode ? 'text-white placeholder-white/70' 
+                               : 'text-purple-900 placeholder-purple-600/70'
+                  } rounded-full focus:outline-none focus:ring-2 focus:ring-pink-400/50`}
+                />
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <span className={`text-sm ${isDarkMode ? 'text-white/70' : 'text-purple-700'}`}>
+                    {isDarkMode ? 'Dark' : 'Light'}
+                  </span>
+                  <Switch
+                    checked={!isDarkMode}
+                    onCheckedChange={(checked) => setIsDarkMode(!checked)}
+                    className="data-[state=checked]:bg-pink-500"
+                  />
+                </div>
+                <Button className={`${
+                  isDarkMode 
+                    ? 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700' 
+                    : 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600'
+                } text-white rounded-full px-4 py-2 text-sm shadow-lg hover:shadow-xl transition-all duration-300`}>
+                  Host your property
+                </Button>
+              </div>
             </div>
-          </div>
-
-          {/* Right Section */}
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <span className={`text-sm ${isDarkMode ? 'text-white/70' : 'text-purple-700'}`}>
-                {isDarkMode ? 'Dark' : 'Light'}
-              </span>
-              <Switch
-                checked={!isDarkMode}
-                onCheckedChange={(checked) => setIsDarkMode(!checked)}
-                className="data-[state=checked]:bg-pink-500"
-              />
-            </div>
-            <Button className={`${
-              isDarkMode 
-                ? 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700' 
-                : 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600'
-            } text-white rounded-full px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300`}>
-              Host your property
-            </Button>
-            <div className={`${
-              isDarkMode ? 'bg-white/10 backdrop-blur-md' : 'bg-white/40 backdrop-blur-md'
-            } p-2 rounded-full`}>
-              <User className={`w-6 h-6 ${isDarkMode ? 'text-white' : 'text-purple-700'}`} />
-            </div>
-          </div>
+          )}
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8 space-y-8">
+      <main className="max-w-7xl mx-auto px-4 py-6 md:py-8 space-y-6 md:space-y-8">
         {/* Property Gallery */}
         <PropertyGallery isDarkMode={isDarkMode} />
 
@@ -93,10 +139,10 @@ const PropertyDetailPage = () => {
           isDarkMode 
             ? 'bg-white/10 backdrop-blur-md border-white/20' 
             : 'bg-white/50 backdrop-blur-md border-purple-200/50'
-        } rounded-2xl border p-6 shadow-xl`}>
-          <div className="flex justify-between items-start">
+        } rounded-2xl border p-4 md:p-6 shadow-xl`}>
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start space-y-4 md:space-y-0">
             <div>
-              <h1 className={`text-3xl font-bold ${
+              <h1 className={`text-2xl md:text-3xl font-bold ${
                 isDarkMode ? 'text-white' : 'text-purple-900'
               } mb-2`}>
                 Luxury 2BHK Apartment in Lodha Park
@@ -117,8 +163,8 @@ const PropertyDetailPage = () => {
                 Lodha Park Tower A, Floor 15
               </div>
             </div>
-            <div className="text-right">
-              <div className={`text-3xl font-bold ${
+            <div className="md:text-right">
+              <div className={`text-2xl md:text-3xl font-bold ${
                 isDarkMode ? 'text-white' : 'text-purple-900'
               } mb-1`}>
                 ₹65,000
@@ -141,13 +187,13 @@ const PropertyDetailPage = () => {
         {/* Property Features */}
         <PropertyFeatures isDarkMode={isDarkMode} />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {/* Move-in Details */}
           <div className={`${
             isDarkMode 
               ? 'bg-white/10 backdrop-blur-md border-white/20' 
               : 'bg-white/50 backdrop-blur-md border-purple-200/50'
-          } rounded-2xl border p-6 shadow-xl`}>
+          } rounded-2xl border p-4 md:p-6 shadow-xl`}>
             <div className="flex items-center space-x-2 mb-4">
               <div className={`w-2 h-2 rounded-full ${
                 isDarkMode ? 'bg-pink-400' : 'bg-purple-500'
@@ -199,7 +245,7 @@ const PropertyDetailPage = () => {
             isDarkMode 
               ? 'bg-white/10 backdrop-blur-md border-white/20' 
               : 'bg-white/50 backdrop-blur-md border-purple-200/50'
-          } rounded-2xl border p-6 shadow-xl`}>
+          } rounded-2xl border p-4 md:p-6 shadow-xl`}>
             <div className="flex items-center space-x-2 mb-4">
               <div className={`w-2 h-2 rounded-full ${
                 isDarkMode ? 'bg-pink-400' : 'bg-purple-500'
@@ -284,13 +330,13 @@ const PropertyDetailPage = () => {
           isDarkMode 
             ? 'bg-white/10 backdrop-blur-md border-white/20' 
             : 'bg-white/50 backdrop-blur-md border-purple-200/50'
-        } rounded-2xl border p-6 shadow-xl`}>
-          <div className="flex flex-wrap gap-4 justify-center">
+        } rounded-2xl border p-4 md:p-6 shadow-xl`}>
+          <div className="flex flex-wrap gap-3 md:gap-4 justify-center">
             <Button variant="outline" className={`${
               isDarkMode 
                 ? 'border-white/30 text-white/80 hover:bg-white/10' 
                 : 'border-purple-200 text-purple-700 hover:bg-purple-100/50'
-            } rounded-full px-6 py-2`}>
+            } rounded-full px-4 md:px-6 py-2 text-sm md:text-base`}>
               <Flag className="w-4 h-4 mr-2" />
               Report Property
             </Button>
@@ -298,7 +344,7 @@ const PropertyDetailPage = () => {
               isDarkMode 
                 ? 'border-white/30 text-white/80 hover:bg-white/10' 
                 : 'border-purple-200 text-purple-700 hover:bg-purple-100/50'
-            } rounded-full px-6 py-2`}>
+            } rounded-full px-4 md:px-6 py-2 text-sm md:text-base`}>
               <AlertTriangle className="w-4 h-4 mr-2" />
               Wrong Info
             </Button>
@@ -306,7 +352,7 @@ const PropertyDetailPage = () => {
               isDarkMode 
                 ? 'border-white/30 text-white/80 hover:bg-white/10' 
                 : 'border-purple-200 text-purple-700 hover:bg-purple-100/50'
-            } rounded-full px-6 py-2`}>
+            } rounded-full px-4 md:px-6 py-2 text-sm md:text-base`}>
               <CheckCircle className="w-4 h-4 mr-2" />
               Mark as Rented
             </Button>
@@ -318,7 +364,7 @@ const PropertyDetailPage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-black py-4 mt-16">
+      <footer className="bg-black py-4 mt-8 md:mt-16">
         <div className="max-w-7xl mx-auto px-4 flex justify-end">
           <span className="text-white/70 text-sm">Edit with Lovable</span>
         </div>
