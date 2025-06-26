@@ -21,8 +21,8 @@ This is perfect for professionals, families, or anyone seeking a premium lifesty
   return (
     <div className={`${
       isDarkMode 
-        ? 'bg-white/10 backdrop-blur-md border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5),_inset_1px_1px_1px_rgba(255,255,255,0.04)]' 
-        : 'bg-white/50 backdrop-blur-md border-purple-200/50 shadow-xl'
+        ? 'bg-gray-950/20 backdrop-blur-md border-white/5 shadow-[0_0_20px_rgba(255,255,255,0.03)]' 
+        : 'bg-gray-50/30 backdrop-blur-md border-purple-200/20 shadow-lg'
     } rounded-2xl border p-6`}>
       <h3 className={`text-lg font-semibold ${
         isDarkMode ? 'text-white' : 'text-purple-900'

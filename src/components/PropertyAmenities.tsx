@@ -19,11 +19,11 @@ const PropertyAmenities = ({ isDarkMode }: PropertyAmenitiesProps) => {
   return (
     <div className={`${
       isDarkMode 
-        ? 'bg-white/10 backdrop-blur-md border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5),_inset_1px_1px_1px_rgba(255,255,255,0.04)]' 
-        : 'bg-white/50 backdrop-blur-md border-purple-200/50'
-    } rounded-2xl border p-6 shadow-xl`}>
-      <h3 className={`text-lg font-semibold ${
-        isDarkMode ? 'text-white' : 'text-purple-900'
+        ? 'bg-gray-950/20 backdrop-blur-md border-white/5' 
+        : 'bg-gray-50/20 backdrop-blur-md border-purple-300/20'
+    } rounded-2xl border p-6 shadow-lg`}>
+      <h3 className={`text-lg font-semibold font-montserrat ${
+        isDarkMode ? 'text-violet-200' : 'text-purple-800'
       } mb-4`}>
         Premium Amenities
       </h3>
@@ -31,16 +31,18 @@ const PropertyAmenities = ({ isDarkMode }: PropertyAmenitiesProps) => {
         {amenities.map((amenity, index) => (
           <div key={index} className={`${
             isDarkMode 
-              ? 'bg-white/10 backdrop-blur-md border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5),_inset_1px_1px_1px_rgba(255,255,255,0.04)] hover:shadow-[0_0_30px_rgba(255,255,255,0.05),_-3px_-3px_15px_rgba(255,255,255,0.1),_8px_8px_20px_rgba(0,0,0,0.6),_inset_1px_1px_1px_rgba(255,255,255,0.05)]' 
-              : 'bg-white/40 backdrop-blur-md border-purple-200/40'
-          } rounded-xl border p-4 text-center transition-all duration-300`}>
+              ? 'bg-gray-950/30 backdrop-blur-md border-white/5' 
+              : 'bg-white/20 backdrop-blur-md border-purple-300/20'
+          } rounded-xl border p-4 text-center`}>
             <div className={`${
-              isDarkMode ? 'text-pink-400' : 'text-purple-600'
-            } mb-2 flex justify-center`}>
-              <amenity.icon className="w-6 h-6" />
+              isDarkMode 
+                ? 'bg-violet-500/10 text-violet-400 border border-violet-400/20' 
+                : 'bg-purple-500/10 text-purple-500 border border-purple-400/20'
+            } mb-3 mx-auto w-12 h-12 rounded-full flex items-center justify-center shadow-sm`}>
+              <amenity.icon className="w-5 h-5" />
             </div>
-            <div className={`text-sm font-medium ${
-              isDarkMode ? 'text-white' : 'text-purple-900'
+            <div className={`text-sm font-medium font-roboto ${
+              isDarkMode ? 'text-violet-300' : 'text-purple-700'
             }`}>
               {amenity.label}
             </div>

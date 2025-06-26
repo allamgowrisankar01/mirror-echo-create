@@ -1,8 +1,13 @@
-
 import PropertyDetailPage from "@/components/PropertyDetailPage";
+import Background from "@/components/Background";
 
 const Index = () => {
-  return <PropertyDetailPage />;
+  return (
+    <>
+      <Background />
+      <PropertyDetailPage />
+    </>
+  );
 };
 
 export default Index;
