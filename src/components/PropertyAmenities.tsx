@@ -1,5 +1,5 @@
 
-import { Wifi, ChefHat, Tv, Snowflake } from "lucide-react";
+import { Wifi, ChefHat, Tv, Snowflake, Car, Coffee, Shield, Gym } from "lucide-react";
 
 interface PropertyAmenitiesProps {
   isDarkMode: boolean;
@@ -11,6 +11,10 @@ const PropertyAmenities = ({ isDarkMode }: PropertyAmenitiesProps) => {
     { icon: ChefHat, label: "Modular Kitchen" },
     { icon: Tv, label: '55" Smart TV' },
     { icon: Snowflake, label: "Central AC" },
+    { icon: Car, label: "Covered Parking" },
+    { icon: Coffee, label: "Coffee Machine" },
+    { icon: Shield, label: "24/7 Security" },
+    { icon: Gym, label: "Gym & Pool" },
   ];
 
   return (
@@ -24,7 +28,7 @@ const PropertyAmenities = ({ isDarkMode }: PropertyAmenitiesProps) => {
       } mb-4`}>
         Premium Amenities
       </h3>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {amenities.map((amenity, index) => (
           <div key={index} className={`${
             isDarkMode 
