@@ -131,6 +131,42 @@
       inset 1px 1px 1px rgba(255, 255, 255, 0.04);
   }
 
+  /* Mobile-specific enhanced shadows */
+  @media (max-width: 768px) {
+    .dark .card,
+    .dark [class*='rounded-'],
+    .dark .bg-card,
+    .dark .bg-background {
+      box-shadow: 
+        /* Enhanced outer white glow */
+        0 0 25px rgba(255, 255, 255, 0.05),
+        /* Stronger directional white highlights */
+        -3px -3px 15px rgba(255, 255, 255, 0.1),
+        /* Deeper dark shadows */
+        8px 8px 20px rgba(0, 0, 0, 0.6),
+        /* Enhanced inner white highlight */
+        inset 2px 2px 2px rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* Enhanced hover effects for mobile */
+    .dark .card:hover,
+    .dark [class*='rounded-']:hover,
+    .dark .bg-card:hover,
+    .dark .bg-background:hover {
+      box-shadow: 
+        /* Intensified outer glow */
+        0 0 35px rgba(255, 255, 255, 0.07),
+        /* Stronger white highlights */
+        -4px -4px 20px rgba(255, 255, 255, 0.12),
+        /* Deeper shadows */
+        10px 10px 25px rgba(0, 0, 0, 0.7),
+        /* Enhanced inner highlight */
+        inset 2px 2px 2px rgba(255, 255, 255, 0.07);
+      transform: translateY(-3px);
+    }
+  }
+
   /* Hover effects for interactive cards */
   .dark .card:hover,
   .dark [class*='rounded-']:hover,
@@ -180,6 +216,22 @@
       inset 1px 1px 1px rgba(255, 255, 255, 0.03);
   }
 
+  /* Mobile-specific feature card enhancements */
+  @media (max-width: 768px) {
+    .dark .feature-card {
+      box-shadow: 
+        /* Enhanced outer glow */
+        0 0 20px rgba(255, 255, 255, 0.04),
+        /* Stronger white highlights */
+        -2px -2px 12px rgba(255, 255, 255, 0.08),
+        /* Deeper shadows */
+        5px 5px 15px rgba(0, 0, 0, 0.5),
+        /* Enhanced inner highlight */
+        inset 2px 2px 2px rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  }
+
   /* Special styles for image cards */
   .dark .image-card {
     @apply bg-white/10 backdrop-blur-md border-white/20;
@@ -192,6 +244,22 @@
       6px 6px 18px rgba(0, 0, 0, 0.6),
       /* Subtle inner highlight */
       inset 1px 1px 1px rgba(255, 255, 255, 0.05);
+  }
+
+  /* Mobile-specific image card enhancements */
+  @media (max-width: 768px) {
+    .dark .image-card {
+      box-shadow: 
+        /* Enhanced dramatic outer glow */
+        0 0 30px rgba(255, 255, 255, 0.06),
+        /* Stronger white highlights */
+        -3px -3px 15px rgba(255, 255, 255, 0.1),
+        /* Deeper shadows */
+        8px 8px 22px rgba(0, 0, 0, 0.7),
+        /* Enhanced inner highlight */
+        inset 2px 2px 2px rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
   }
 }
 
