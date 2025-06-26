@@ -194,9 +194,81 @@ const PropertyDetailPage = () => {
             </div>
           </div>
 
-          {/* Premium Amenities */}
-          <PropertyAmenities isDarkMode={isDarkMode} />
+          {/* Additional Charges */}
+          <div className={`${
+            isDarkMode 
+              ? 'bg-white/10 backdrop-blur-md border-white/20' 
+              : 'bg-white/50 backdrop-blur-md border-purple-200/50'
+          } rounded-2xl border p-6 shadow-xl`}>
+            <div className="flex items-center space-x-2 mb-4">
+              <div className={`w-2 h-2 rounded-full ${
+                isDarkMode ? 'bg-pink-400' : 'bg-purple-500'
+              }`} />
+              <h3 className={`text-lg font-semibold ${
+                isDarkMode ? 'text-white' : 'text-purple-900'
+              }`}>
+                Additional Charges
+              </h3>
+            </div>
+            <div className="space-y-3">
+              <div className="flex justify-between items-center">
+                <span className={`${
+                  isDarkMode ? 'text-white/70' : 'text-purple-700'
+                }`}>Electricity:</span>
+                <div className="text-right">
+                  <span className={`font-medium ${
+                    isDarkMode ? 'text-white' : 'text-purple-900'
+                  }`}>₹8/unit</span>
+                  <div className={`text-xs ${
+                    isDarkMode ? 'text-white/50' : 'text-purple-600/70'
+                  }`}>variable</div>
+                </div>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className={`${
+                  isDarkMode ? 'text-white/70' : 'text-purple-700'
+                }`}>Water:</span>
+                <div className="text-right">
+                  <span className={`font-medium ${
+                    isDarkMode ? 'text-white' : 'text-purple-900'
+                  }`}>₹500</span>
+                  <div className={`text-xs ${
+                    isDarkMode ? 'text-white/50' : 'text-purple-600/70'
+                  }`}>monthly</div>
+                </div>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className={`${
+                  isDarkMode ? 'text-white/70' : 'text-purple-700'
+                }`}>Maintenance:</span>
+                <div className="text-right">
+                  <span className={`font-medium ${
+                    isDarkMode ? 'text-white' : 'text-purple-900'
+                  }`}>₹3,500</span>
+                  <div className={`text-xs ${
+                    isDarkMode ? 'text-white/50' : 'text-purple-600/70'
+                  }`}>monthly</div>
+                </div>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className={`${
+                  isDarkMode ? 'text-white/70' : 'text-purple-700'
+                }`}>Security Deposit:</span>
+                <div className="text-right">
+                  <span className={`font-medium ${
+                    isDarkMode ? 'text-white' : 'text-purple-900'
+                  }`}>₹90,000</span>
+                  <div className={`text-xs ${
+                    isDarkMode ? 'text-white/50' : 'text-purple-600/70'
+                  }`}>refundable</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        {/* Premium Amenities */}
+        <PropertyAmenities isDarkMode={isDarkMode} />
 
         {/* About This Property */}
         <PropertyAbout isDarkMode={isDarkMode} />
