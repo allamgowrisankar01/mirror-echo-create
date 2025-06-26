@@ -1,36 +1,69 @@
 
-import { User, Phone, MessageCircle, Shield } from 'lucide-react';
+import { MessageCircle, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const ContactOwner = () => {
+interface ContactOwnerProps {
+  isDarkMode: boolean;
+}
+
+const ContactOwner = ({ isDarkMode }: ContactOwnerProps) => {
   return (
-    <div className="bg-white/5 rounded-3xl p-6 border border-white/10 shadow-2xl backdrop-blur-xl">
-      <h3 className="text-xl font-bold mb-6 text-white">Contact Property Owner</h3>
-      
-      <div className="flex items-center space-x-4 mb-6 p-4 bg-white/5 rounded-2xl border border-white/10">
-        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-violet-500 flex items-center justify-center shadow-lg shadow-pink-500/30 relative">
-          <User className="w-7 h-7 text-white" />
-          <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-black"></div>
-        </div>
-        <div className="flex-1">
-          <div className="font-semibold text-white text-lg">Rajesh Kumar</div>
-          <div className="text-sm text-gray-400 flex items-center space-x-2">
-            <span>Property Owner</span>
-            <Shield className="w-3 h-3 text-green-400" />
-            <span className="text-green-400 text-xs">Verified</span>
+    <div className={`${
+      isDarkMode 
+        ? 'bg-white/10 backdrop-blur-md border-white/20' 
+        : 'bg-white/50 backdrop-blur-md border-purple-200/50'
+    } rounded-2xl border p-6 shadow-xl`}>
+      <h3 className={`text-lg font-semibold ${
+        isDarkMode ? 'text-white' : 'text-purple-900'
+      } mb-4`}>
+        Contact Property Owner
+      </h3>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-4">
+          <div className={`w-12 h-12 ${
+            isDarkMode 
+              ? 'bg-gradient-to-r from-pink-500 to-purple-600' 
+              : 'bg-gradient-to-r from-purple-500 to-pink-500'
+          } rounded-full flex items-center justify-center text-white font-bold text-lg`}>
+            RK
           </div>
-          <div className="text-xs text-gray-500 mt-1">Usually responds within 10 minutes</div>
+          <div>
+            <div className={`font-semibold ${
+              isDarkMode ? 'text-white' : 'text-purple-900'
+            }`}>
+              Rajesh Kumar
+            </div>
+            <div className={`text-sm ${
+              isDarkMode ? 'text-white/70' : 'text-purple-700'
+            }`}>
+              Property Owner
+            </div>
+            <div className={`text-xs ${
+              isDarkMode ? 'text-white/60' : 'text-purple-600'
+            }`}>
+              Responds in 2 hours
+            </div>
+          </div>
         </div>
-      </div>
-      
-      <div className="grid grid-cols-2 gap-4">
-        <button className="py-4 px-4 rounded-2xl bg-gradient-to-r from-pink-500 to-violet-500 text-white font-semibold hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2">
-          <MessageCircle className="w-5 h-5" />
-          <span>Chat Now</span>
-        </button>
-        <button className="py-4 px-4 rounded-2xl bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 transition-all duration-300 hover:shadow-lg flex items-center justify-center space-x-2 backdrop-blur-xl">
-          <Phone className="w-5 h-5" />
-          <span>Call Now</span>
-        </button>
+        
+        <div className="flex space-x-3">
+          <Button className={`${
+            isDarkMode 
+              ? 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700' 
+              : 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600'
+          } text-white rounded-full px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300`}>
+            <MessageCircle className="w-4 h-4 mr-2" />
+            Chat
+          </Button>
+          <Button className={`${
+            isDarkMode 
+              ? 'bg-black/30 hover:bg-black/40 text-white border-white/20' 
+              : 'bg-white/60 hover:bg-white/80 text-purple-900 border-purple-200/60'
+          } rounded-full px-6 py-2 border backdrop-blur-md shadow-lg hover:shadow-xl transition-all duration-300`}>
+            <Phone className="w-4 h-4 mr-2" />
+            Call
+          </Button>
+        </div>
       </div>
     </div>
   );
