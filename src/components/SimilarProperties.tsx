@@ -39,8 +39,8 @@ const SimilarProperties = ({ isDarkMode }: SimilarPropertiesProps) => {
         : 'bg-white/50 backdrop-blur-md border-purple-200/50 shadow-xl'
     } rounded-2xl border p-6`}>
       <h2 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-purple-900'} mb-4`}>
-        Similar Properties
-      </h2>
+          Similar Properties
+        </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {properties.map((property, index) => (
           <div key={index} className={`${
