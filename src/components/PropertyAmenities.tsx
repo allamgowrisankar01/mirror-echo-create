@@ -1,5 +1,5 @@
 
-import { Wifi, ChefHat, Tv, Snowflake, Car, Coffee, Shield, Gym } from "lucide-react";
+import { Wifi, ChefHat, Tv, Snowflake, Car, Coffee, Shield, Dumbbell } from "lucide-react";
 
 interface PropertyAmenitiesProps {
   isDarkMode: boolean;
@@ -14,7 +14,7 @@ const PropertyAmenities = ({ isDarkMode }: PropertyAmenitiesProps) => {
     { icon: Car, label: "Covered Parking" },
     { icon: Coffee, label: "Coffee Machine" },
     { icon: Shield, label: "24/7 Security" },
-    { icon: Gym, label: "Gym & Pool" },
+    { icon: Dumbbell, label: "Gym & Pool" },
   ];
 
   return (
