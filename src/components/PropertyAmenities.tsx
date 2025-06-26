@@ -22,9 +22,7 @@ const PropertyAmenities = ({ isDarkMode }: PropertyAmenitiesProps) => {
         ? 'bg-gray-950/20 backdrop-blur-md border-white/5' 
         : 'bg-gray-50/20 backdrop-blur-md border-purple-300/20'
     } rounded-2xl border p-6 shadow-lg`}>
-      <h3 className={`text-lg font-semibold font-montserrat ${
-        isDarkMode ? 'text-violet-200' : 'text-purple-800'
-      } mb-4`}>
+      <h3 className="text-lg font-semibold font-montserrat text-white mb-4">
         Premium Amenities
       </h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -36,14 +34,12 @@ const PropertyAmenities = ({ isDarkMode }: PropertyAmenitiesProps) => {
           } rounded-xl border p-4 text-center`}>
             <div className={`${
               isDarkMode 
-                ? 'bg-violet-500/10 text-violet-400 border border-violet-400/20' 
-                : 'bg-purple-500/10 text-purple-500 border border-purple-400/20'
+                ? 'bg-violet-500/10 text-white border border-white/20' 
+                : 'bg-purple-500/10 text-white border border-white/20'
             } mb-3 mx-auto w-12 h-12 rounded-full flex items-center justify-center shadow-sm`}>
               <amenity.icon className="w-5 h-5" />
             </div>
-            <div className={`text-sm font-medium font-roboto ${
-              isDarkMode ? 'text-violet-300' : 'text-purple-700'
-            }`}>
+            <div className="text-sm font-medium font-roboto text-white">
               {amenity.label}
             </div>
           </div>

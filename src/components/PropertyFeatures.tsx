@@ -25,28 +25,20 @@ const PropertyFeatures = ({ isDarkMode }: PropertyFeaturesProps) => {
         {features.map((feature, index) => (
           <div key={index} className={`${
             isDarkMode 
-              ? 'bg-gray-950/30 backdrop-blur-md border-white/5 hover:bg-gray-950/40' 
-              : 'bg-white/20 backdrop-blur-md border-purple-300/20 hover:bg-white/30'
-          } rounded-xl border p-3 md:p-4 text-center transition-all duration-300`}>
-            <div className={`${
-              isDarkMode ? 'text-violet-400' : 'text-purple-500'
-            } mb-2 flex justify-center`}>
+              ? 'bg-gray-950/30 backdrop-blur-md border-white/5' 
+              : 'bg-white/20 backdrop-blur-md border-purple-300/20'
+          } rounded-xl border p-3 md:p-4 text-center`}>
+            <div className="text-white mb-2 flex justify-center">
               <feature.icon className="w-5 md:w-6 h-5 md:h-6" />
             </div>
-            <div className={`text-base md:text-lg font-bold ${
-              isDarkMode ? 'text-violet-200' : 'text-purple-800'
-            } mb-1`}>
+            <div className="text-base md:text-lg font-bold text-white mb-1">
               {feature.value}
             </div>
-            <div className={`text-xs ${
-              isDarkMode ? 'text-violet-300/80' : 'text-purple-600'
-            }`}>
+            <div className="text-xs text-white/80">
               {feature.label}
             </div>
             {feature.subtext && (
-              <div className={`text-xs ${
-                isDarkMode ? 'text-violet-300/60' : 'text-purple-500'
-              } mt-1`}>
+              <div className="text-xs text-white/60 mt-1">
                 {feature.subtext}
               </div>
             )}
@@ -59,9 +51,9 @@ const PropertyFeatures = ({ isDarkMode }: PropertyFeaturesProps) => {
         {tags.map((tag, index) => (
           <span key={index} className={`${
             isDarkMode 
-              ? 'bg-gray-950/30 text-violet-200 border-white/5' 
-              : 'bg-white/20 text-purple-800 border-purple-300/20'
-          } px-3 py-1 rounded-full text-sm border backdrop-blur-md transition-all duration-300`}>
+              ? 'bg-gray-950/30 text-white border-white/5' 
+              : 'bg-white/20 text-white border-purple-300/20'
+          } px-3 py-1 rounded-full text-sm border backdrop-blur-md`}>
             {tag}
           </span>
         ))}

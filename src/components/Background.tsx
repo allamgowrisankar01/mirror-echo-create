@@ -21,21 +21,21 @@ const Background = ({ className }: BackgroundProps) => {
         }}
       />
       <div 
-        className="absolute inset-0 backdrop-blur-[20px] bg-white/5"
+        className="absolute inset-0 backdrop-blur-[20px] bg-black/30"
         style={{ 
           zIndex: 1,
           mixBlendMode: 'overlay'
         }}
       />
       <div 
-        className="absolute inset-0 backdrop-blur-[15px] bg-purple-900/10"
+        className="absolute inset-0 backdrop-blur-[15px] bg-purple-950/40"
         style={{ 
           zIndex: 2,
           mixBlendMode: 'soft-light'
         }}
       />
       <div 
-        className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/10"
+        className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/40"
         style={{ zIndex: 3 }}
       />
     </div>

@@ -24,23 +24,15 @@ This is perfect for professionals, families, or anyone seeking a premium lifesty
         ? 'bg-gray-950/20 backdrop-blur-md border-white/5 shadow-[0_0_20px_rgba(255,255,255,0.03)]' 
         : 'bg-gray-50/30 backdrop-blur-md border-purple-200/20 shadow-lg'
     } rounded-2xl border p-6`}>
-      <h3 className={`text-lg font-semibold ${
-        isDarkMode ? 'text-white' : 'text-purple-900'
-      } mb-4`}>
+      <h3 className="text-lg font-semibold text-white mb-4">
         About this property
       </h3>
-      <p className={`${
-        isDarkMode ? 'text-white/80' : 'text-purple-800'
-      } leading-relaxed mb-4`}>
+      <p className="text-white leading-relaxed mb-4">
         {isExpanded ? fullText : shortText}
       </p>
       <Button
         onClick={() => setIsExpanded(!isExpanded)}
-        className={`${
-          isDarkMode 
-            ? 'text-pink-400 hover:text-pink-300' 
-            : 'text-purple-600 hover:text-purple-700'
-        } p-0 h-auto font-medium`}
+        className="text-white p-0 h-auto font-medium"
         variant="ghost"
       >
         {isExpanded ? "Read less" : "Read more"}
