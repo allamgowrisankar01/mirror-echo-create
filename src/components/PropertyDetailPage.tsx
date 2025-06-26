@@ -87,14 +87,14 @@ const PropertyDetailPage = () => {
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <span className="text-sm text-white/70">
+                  {/* <span className="text-sm text-white/70">
                     {isDarkMode ? 'Dark' : 'Light'}
                   </span>
                   <Switch
                     checked={!isDarkMode}
                     onCheckedChange={(checked) => setIsDarkMode(!checked)}
                     className="data-[state=checked]:bg-pink-500"
-                  />
+                  /> */}
                 </div>
                 <Button className={`${
                   isDarkMode 
