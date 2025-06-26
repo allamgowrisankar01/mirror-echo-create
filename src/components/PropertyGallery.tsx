@@ -8,11 +8,11 @@ interface PropertyGalleryProps {
 
 const PropertyGallery = ({ isDarkMode }: PropertyGalleryProps) => {
   return (
-    <div className="grid grid-cols-4 gap-4 h-56">
+    <div className="grid grid-cols-4 gap-4 h-72">
       {/* Main Image */}
-      <div className="col-span-2 relative group rounded-2xl overflow-hidden h-56">
+      <div className="col-span-2 relative group rounded-2xl overflow-hidden h-72">
         <img
-          src="/placeholder.svg"
+          src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop&crop=center"
           alt="Main property view"
           className="w-full h-full object-cover"
         />
@@ -36,31 +36,31 @@ const PropertyGallery = ({ isDarkMode }: PropertyGalleryProps) => {
       </div>
 
       {/* Side Images Grid */}
-      <div className="col-span-2 grid grid-cols-2 gap-4 h-56">
+      <div className="col-span-2 grid grid-cols-2 gap-4 h-72">
         <div className="rounded-2xl overflow-hidden h-full">
           <img
-            src="/placeholder.svg"
+            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&crop=center"
             alt="Property view 2"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="rounded-2xl overflow-hidden h-full">
           <img
-            src="/placeholder.svg"
+            src="https://images.unsplash.com/photo-1574691250077-03a929faece5?w=400&h=300&fit=crop&crop=center"
             alt="Property view 3"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="rounded-2xl overflow-hidden h-full">
           <img
-            src="/placeholder.svg"
+            src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=400&h=300&fit=crop&crop=center"
             alt="Property view 4"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="relative rounded-2xl overflow-hidden h-full">
           <img
-            src="/placeholder.svg"
+            src="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=400&h=300&fit=crop&crop=center"
             alt="Property view 5"
             className="w-full h-full object-cover"
           />
