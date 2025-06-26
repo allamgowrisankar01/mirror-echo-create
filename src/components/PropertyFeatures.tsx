@@ -17,7 +17,7 @@ const PropertyFeatures = ({ isDarkMode }: PropertyFeaturesProps) => {
   return (
     <div className={`${
       isDarkMode 
-        ? 'bg-white/10 backdrop-blur-md border-white/20' 
+        ? 'bg-white/10 backdrop-blur-md border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5),_inset_1px_1px_1px_rgba(255,255,255,0.04)]' 
         : 'bg-white/50 backdrop-blur-md border-purple-200/50'
     } rounded-2xl border p-4 md:p-6 shadow-xl`}>
       {/* Feature Cards */}
@@ -25,9 +25,9 @@ const PropertyFeatures = ({ isDarkMode }: PropertyFeaturesProps) => {
         {features.map((feature, index) => (
           <div key={index} className={`${
             isDarkMode
-              ? 'bg-white/10 backdrop-blur-md border-white/20' 
+              ? 'bg-white/10 backdrop-blur-md border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5),_inset_1px_1px_1px_rgba(255,255,255,0.04)] hover:shadow-[0_0_30px_rgba(255,255,255,0.05),_-3px_-3px_15px_rgba(255,255,255,0.1),_8px_8px_20px_rgba(0,0,0,0.6),_inset_1px_1px_1px_rgba(255,255,255,0.05)]' 
               : 'bg-white/40 backdrop-blur-md border-purple-200/40'
-          } rounded-xl border p-3 md:p-4 text-center hover:shadow-lg transition-all duration-300`}>
+          } rounded-xl border p-3 md:p-4 text-center transition-all duration-300`}>
             <div className={`${
               isDarkMode ? 'text-pink-400' : 'text-purple-600'
             } mb-2 flex justify-center`}>
@@ -58,10 +58,10 @@ const PropertyFeatures = ({ isDarkMode }: PropertyFeaturesProps) => {
       <div className="flex flex-wrap gap-2">
         {tags.map((tag, index) => (
           <span key={index} className={`${
-            isDarkMode 
-              ? 'bg-gradient-to-r from-pink-500/20 to-purple-600/20 text-pink-300 border-pink-400/30' 
-              : 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-700 border-purple-400/30'
-          } px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium border backdrop-blur-md`}>
+            isDarkMode
+              ? 'bg-white/10 text-white/90 border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.02),_-1px_-1px_8px_rgba(255,255,255,0.06),_3px_3px_10px_rgba(0,0,0,0.4),_inset_1px_1px_1px_rgba(255,255,255,0.03)]'
+              : 'bg-white/40 text-purple-900 border-purple-200/40'
+          } px-3 py-1 rounded-full text-sm border backdrop-blur-md transition-all duration-300`}>
             {tag}
           </span>
         ))}

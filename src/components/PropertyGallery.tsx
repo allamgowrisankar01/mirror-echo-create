@@ -9,7 +9,9 @@ const PropertyGallery = ({ isDarkMode }: PropertyGalleryProps) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-auto md:h-72">
       {/* Main Image */}
-      <div className="col-span-1 md:col-span-2 relative group rounded-2xl overflow-hidden h-72">
+      <div className={`col-span-1 md:col-span-2 relative group rounded-2xl overflow-hidden h-72 ${
+        isDarkMode ? 'shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5)]' : 'shadow-xl'
+      }`}>
         <img
           src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop&crop=center"
           alt="Main property view"
@@ -36,28 +38,36 @@ const PropertyGallery = ({ isDarkMode }: PropertyGalleryProps) => {
 
       {/* Side Images Grid */}
       <div className="hidden md:grid col-span-2 grid-cols-2 gap-4 h-72">
-        <div className="rounded-2xl overflow-hidden h-full">
+        <div className={`rounded-2xl overflow-hidden h-full ${
+          isDarkMode ? 'shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5)]' : 'shadow-xl'
+        }`}>
           <img
             src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&crop=center"
             alt="Property view 2"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="rounded-2xl overflow-hidden h-full">
+        <div className={`rounded-2xl overflow-hidden h-full ${
+          isDarkMode ? 'shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5)]' : 'shadow-xl'
+        }`}>
           <img
             src="https://images.unsplash.com/photo-1574691250077-03a929faece5?w=400&h=300&fit=crop&crop=center"
             alt="Property view 3"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="rounded-2xl overflow-hidden h-full">
+        <div className={`rounded-2xl overflow-hidden h-full ${
+          isDarkMode ? 'shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5)]' : 'shadow-xl'
+        }`}>
           <img
             src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=400&h=300&fit=crop&crop=center"
             alt="Property view 4"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative rounded-2xl overflow-hidden h-full">
+        <div className={`relative rounded-2xl overflow-hidden h-full ${
+          isDarkMode ? 'shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5)]' : 'shadow-xl'
+        }`}>
           <img
             src="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=400&h=300&fit=crop&crop=center"
             alt="Property view 5"
@@ -77,21 +87,27 @@ const PropertyGallery = ({ isDarkMode }: PropertyGalleryProps) => {
 
       {/* Mobile View Additional Images Carousel */}
       <div className="grid md:hidden grid-cols-3 gap-2 h-24">
-        <div className="rounded-xl overflow-hidden h-full">
+        <div className={`rounded-xl overflow-hidden h-full ${
+          isDarkMode ? 'shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5)]' : 'shadow-xl'
+        }`}>
           <img
             src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&crop=center"
             alt="Property view 2"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="rounded-xl overflow-hidden h-full">
+        <div className={`rounded-xl overflow-hidden h-full ${
+          isDarkMode ? 'shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5)]' : 'shadow-xl'
+        }`}>
           <img
             src="https://images.unsplash.com/photo-1574691250077-03a929faece5?w=400&h=300&fit=crop&crop=center"
             alt="Property view 3"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative rounded-xl overflow-hidden h-full">
+        <div className={`relative rounded-xl overflow-hidden h-full ${
+          isDarkMode ? 'shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5)]' : 'shadow-xl'
+        }`}>
           <img
             src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=400&h=300&fit=crop&crop=center"
             alt="Property view 4"

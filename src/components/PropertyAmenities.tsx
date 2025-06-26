@@ -1,4 +1,3 @@
-
 import { Wifi, ChefHat, Tv, Snowflake, Car, Coffee, Shield, Dumbbell } from "lucide-react";
 
 interface PropertyAmenitiesProps {
@@ -20,7 +19,7 @@ const PropertyAmenities = ({ isDarkMode }: PropertyAmenitiesProps) => {
   return (
     <div className={`${
       isDarkMode 
-        ? 'bg-white/10 backdrop-blur-md border-white/20' 
+        ? 'bg-white/10 backdrop-blur-md border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5),_inset_1px_1px_1px_rgba(255,255,255,0.04)]' 
         : 'bg-white/50 backdrop-blur-md border-purple-200/50'
     } rounded-2xl border p-6 shadow-xl`}>
       <h3 className={`text-lg font-semibold ${
@@ -32,9 +31,9 @@ const PropertyAmenities = ({ isDarkMode }: PropertyAmenitiesProps) => {
         {amenities.map((amenity, index) => (
           <div key={index} className={`${
             isDarkMode 
-              ? 'bg-white/10 backdrop-blur-md border-white/20' 
+              ? 'bg-white/10 backdrop-blur-md border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5),_inset_1px_1px_1px_rgba(255,255,255,0.04)] hover:shadow-[0_0_30px_rgba(255,255,255,0.05),_-3px_-3px_15px_rgba(255,255,255,0.1),_8px_8px_20px_rgba(0,0,0,0.6),_inset_1px_1px_1px_rgba(255,255,255,0.05)]' 
               : 'bg-white/40 backdrop-blur-md border-purple-200/40'
-          } rounded-xl border p-4 text-center hover:shadow-lg transition-all duration-300`}>
+          } rounded-xl border p-4 text-center transition-all duration-300`}>
             <div className={`${
               isDarkMode ? 'text-pink-400' : 'text-purple-600'
             } mb-2 flex justify-center`}>

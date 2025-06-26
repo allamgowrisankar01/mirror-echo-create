@@ -137,9 +137,9 @@ const PropertyDetailPage = () => {
         {/* Property Title & Pricing */}
         <div className={`${
           isDarkMode 
-            ? 'bg-white/10 backdrop-blur-md border-white/20' 
-            : 'bg-white/50 backdrop-blur-md border-purple-200/50'
-        } rounded-2xl border p-4 md:p-6 shadow-xl`}>
+            ? 'bg-white/10 backdrop-blur-md border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5),_inset_1px_1px_1px_rgba(255,255,255,0.04)]' 
+            : 'bg-white/50 backdrop-blur-md border-purple-200/50 shadow-xl'
+        } rounded-2xl border p-4 md:p-6`}>
           <div className="flex flex-col md:flex-row md:justify-between md:items-start space-y-4 md:space-y-0">
             <div>
               <h1 className={`text-2xl md:text-3xl font-bold ${
@@ -191,9 +191,9 @@ const PropertyDetailPage = () => {
           {/* Move-in Details */}
           <div className={`${
             isDarkMode 
-              ? 'bg-white/10 backdrop-blur-md border-white/20' 
-              : 'bg-white/50 backdrop-blur-md border-purple-200/50'
-          } rounded-2xl border p-4 md:p-6 shadow-xl`}>
+              ? 'bg-white/10 backdrop-blur-md border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5),_inset_1px_1px_1px_rgba(255,255,255,0.04)]' 
+              : 'bg-white/50 backdrop-blur-md border-purple-200/50 shadow-xl'
+          } rounded-2xl border p-4 md:p-6`}>
             <div className="flex items-center space-x-2 mb-4">
               <div className={`w-2 h-2 rounded-full ${
                 isDarkMode ? 'bg-pink-400' : 'bg-purple-500'
@@ -243,9 +243,9 @@ const PropertyDetailPage = () => {
           {/* Additional Charges */}
           <div className={`${
             isDarkMode 
-              ? 'bg-white/10 backdrop-blur-md border-white/20' 
-              : 'bg-white/50 backdrop-blur-md border-purple-200/50'
-          } rounded-2xl border p-4 md:p-6 shadow-xl`}>
+              ? 'bg-white/10 backdrop-blur-md border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5),_inset_1px_1px_1px_rgba(255,255,255,0.04)]' 
+              : 'bg-white/50 backdrop-blur-md border-purple-200/50 shadow-xl'
+          } rounded-2xl border p-4 md:p-6`}>
             <div className="flex items-center space-x-2 mb-4">
               <div className={`w-2 h-2 rounded-full ${
                 isDarkMode ? 'bg-pink-400' : 'bg-purple-500'
@@ -328,9 +328,9 @@ const PropertyDetailPage = () => {
         {/* Report Buttons */}
         <div className={`${
           isDarkMode 
-            ? 'bg-white/10 backdrop-blur-md border-white/20' 
-            : 'bg-white/50 backdrop-blur-md border-purple-200/50'
-        } rounded-2xl border p-4 md:p-6 shadow-xl`}>
+            ? 'bg-white/10 backdrop-blur-md border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.03),_-2px_-2px_10px_rgba(255,255,255,0.07),_5px_5px_15px_rgba(0,0,0,0.5),_inset_1px_1px_1px_rgba(255,255,255,0.04)]' 
+            : 'bg-white/50 backdrop-blur-md border-purple-200/50 shadow-xl'
+        } rounded-2xl border p-4 md:p-6`}>
           <div className="flex flex-wrap gap-3 md:gap-4 justify-center">
             <Button variant="outline" className={`${
               isDarkMode 
